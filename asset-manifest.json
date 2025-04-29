@@ -1,19 +1,17 @@
 {
   "files": {
     "main.css": "/studysync/static/css/main.f4815a51.css",
-    "main.js": "/studysync/static/js/main.63bbc4ee.js",
-    "static/js/453.06ab8bbf.chunk.js": "/studysync/static/js/453.06ab8bbf.chunk.js",
+    "main.js": "/studysync/static/js/main.d981e9df.js",
     "static/media/main-img.svg": "/studysync/static/media/main-img.63fb169999e640ee9f0c5cdaf45ca120.svg",
     "static/media/profile.png": "/studysync/static/media/profile.5faf09a7795d28bf5a2b.png",
     "static/media/bell-svgrepo-com.svg": "/studysync/static/media/bell-svgrepo-com.272cdabe2ee115164faf17f675652573.svg",
     "static/media/DeepSeek.svg": "/studysync/static/media/DeepSeek.6c5fcb8c93b2029c2ecb690deaac66d3.svg",
     "index.html": "/studysync/index.html",
     "main.f4815a51.css.map": "/studysync/static/css/main.f4815a51.css.map",
-    "main.63bbc4ee.js.map": "/studysync/static/js/main.63bbc4ee.js.map",
-    "453.06ab8bbf.chunk.js.map": "/studysync/static/js/453.06ab8bbf.chunk.js.map"
+    "main.d981e9df.js.map": "/studysync/static/js/main.d981e9df.js.map"
   },
   "entrypoints": [
     "static/css/main.f4815a51.css",
-    "static/js/main.63bbc4ee.js"
+    "static/js/main.d981e9df.js"
   ]
 }
