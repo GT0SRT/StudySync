@@ -1,0 +1,100 @@
+Full Setup Steps for Your Project
+1. Prerequisites
+                Make sure these are installed on your machine:
+
+                Node.js (version 14+ recommended) - https://nodejs.org/
+
+                npm (comes with Node.js)
+
+                MongoDB Atlas account (or local MongoDB installed)
+
+                Git (optional but recommended)
+
+2. Clone / Get Project Code
+                If you share via Git:
+
+                bash
+                Copy
+                Edit
+                git clone https://github.com/yourusername/yourproject.git
+                cd yourproject
+                Or just copy the folders frontend and backend.
+
+3. Setup Backend (Node.js + Express + MongoDB)
+                3.1 Navigate to backend folder
+
+                cd backend
+                3.2 Install dependencies
+
+                npm install
+                This installs all packages like express, mongoose, jsonwebtoken, axios, etc.
+
+                3.3 Create environment file
+                Create .env file in backend folder and add your variables:
+
+
+
+                PORT=8080
+                DB_URL=mongodb+srv://youruser:yourpassword@cluster0.mongodb.net/yourdbname?retryWrites=true&w=majority
+                JWT_SECRET=your_jwt_secret_key
+                JWT_TIMEOUT=12h
+                GOOGLE_CLIENT_ID=your_google_client_id
+                GOOGLE_CLIENT_SECRET=your_google_client_secret
+                Make sure to replace values with your own.
+
+                3.4 Run backend server
+
+                npm start
+                or if you use nodemon (auto reload):
+
+
+                npm run dev
+                Your backend API should run on http://localhost:8080 (or the port you set).
+
+4. Setup Frontend (React + Vite)
+                    4.1 Open a new terminal and go to frontend folder
+                    
+                    cd frontend
+                    4.2 Install dependencies
+                   
+                    npm install
+                    4.3 Create environment file
+                    Create .env file inside frontend with this content:
+
+            
+                    VITE_API_URL=http://localhost:8080
+                    VITE_GOOGLE_CLIENT_ID=your_google_client_id
+                    Note: Vite requires VITE_ prefix for env variables.
+
+                    4.4 Run frontend dev server
+                    
+                    npm run dev
+                    It will start on http://localhost:5173 by default.
+
+5. Connecting Frontend to Backend
+            In your React code, use import.meta.env.VITE_API_URL to call backend APIs.
+
+            Make sure your frontend Google OAuth client ID matches the one in your backend and Google Console.
+
+6. How to Share with New User
+Send them:
+
+            The entire project folder or Git repo.
+
+Instructions:
+
+                Install Node.js and npm.
+
+                Get MongoDB Atlas cluster credentials.
+
+                Clone or copy repo.
+
+                Create .env files for frontend and backend with correct values.
+
+                Run npm install in both frontend and backend.
+
+                Run backend server (npm start or npm run dev).
+
+                Run frontend dev server (npm run dev).
+
+Open frontend URL in browser (http://localhost:5173).
