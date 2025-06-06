@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
 import deep from '../Assets/DeepSeek.svg';
@@ -7,6 +7,7 @@ import { FaCalendarAlt } from "react-icons/fa";
 import { LuListTodo } from "react-icons/lu";
 import { MdOutlineGroup } from "react-icons/md";
 import Upcoming from './Upcoming';
+import { Link } from 'react-router-dom';
 
 export const Landingpage = () => {
   const [showUpcoming, setShowUpcoming] = useState(false);
@@ -14,29 +15,37 @@ export const Landingpage = () => {
     <>
     <div className="bg-black text-white font-sans">
       <Navbar/>
-      <main className="text-center mt-16 relative">
-        <section className="hero">
-          <h1 className="text-2xl md:text-4xl font-bold italic mr-[400px] p-7 mt-12">Study, Grow & Collaborate</h1>
-          <div className='flex m-16 gap-5 ml-[20%]'>
-            <div className='text-cyan-300 hover:cursor-pointer hover:scale-105 flex flex-col gap-2 justify-center items-center'>
-                <FaCalendarAlt size={50}/>
-                <p className='font-semibold text-white'>calendar</p>
-            </div>
-            <div className='text-cyan-300 hover:cursor-pointer hover:scale-105 flex flex-col gap-2 justify-center items-center'>
-                <LuListTodo size={50}/>
-                <p className='font-semibold text-white'>to do list</p>
-            </div>
-            <div onClick={()=> setShowUpcoming(true)} className='text-cyan-300 hover:cursor-pointer hover:scale-105 flex flex-col gap-2 justify-center items-center'>
-                <MdOutlineGroup size={50}/>
-                <p className='font-semibold text-white'>collaborate</p>
-            </div>
+      <main className="text-center mt-12 relative">
+        <section className="flex flex-col items-center justify-center">
+          <div className='flex w-screen'>
+            <h1 className="text-5xl md:text-7xl font-bold italic mr-[400px] p-7 mt-12">Study, Grow & Collaborate</h1>
+            <div className="h-[50%] w-[50%] ml-[50%] md:ml-[60%] mt-7 md:h-[32%] md:w-[32%] rounded-[20px] absolute"><img src={mainimg} href='emd' alt='main' /></div>
           </div>
-          <div className="h-[25%] w-[25%] rounded-[20px] absolute top-5 right-[100px]"><img src={mainimg} href='emd' alt='main' /></div>
+          <div className='flex m-16 gap-7'>
+            <Link to="/Calendar">
+            <div className='text-cyan-300 hover:cursor-pointer hover:scale-105 flex flex-col gap-2 justify-center items-center'>
+                <FaCalendarAlt size={64}/>
+                <p className='font-semibold text-xl text-white'>calendar</p>
+            </div>
+            </Link>
+            <Link to="/Todo">
+            <div className='text-cyan-300 hover:cursor-pointer hover:scale-105 flex flex-col gap-2 justify-center items-center'>              
+                <LuListTodo size={64}/>
+                <p className='font-semibold text-xl text-white'>To-do list</p>
+            </div>
+            </Link>
+            <Link to="/Collaborate">
+            <div onClick={()=> setShowUpcoming(true)} className='text-cyan-300 hover:cursor-pointer hover:scale-105 flex flex-col gap-2 justify-center items-center'>
+                <MdOutlineGroup size={64}/>
+                <p className='font-semibold text-xl text-white'>collaborate</p>
+            </div>
+            </Link>
+          </div>
         </section>
 
-        <div className='mt-20 md:mt-36 p-7 flex flex-col md:flex-row mx-auto items-center justify-center'>
+        <div className='mt-5 md:mt-12 p-7 flex flex-col md:flex-row mx-auto items-center justify-center'>
         <img src={deep} alt="StudySync Logo" className="w-[20vh] h-[20vh] md:w-[30vh] md:h-[30vh] m-5 p-3 rounded-full mb-2" />
-        <section className="bg-[#222] p-8 w-[80%] md:w-[40%] rounded-[20px] text-left">
+        <section className="bg-[#222] cursor-pointer p-8 w-[80%] md:w-[40%] rounded-[20px] text-left">
           <h2 className="font-mono text-xl mb-2">Build, Code using AI</h2>
           <p className="text-sm text-gray-300">
             Collaborate on tasks, sync deadlines, and join AI-matched study groups. Get personalized productivity insights and shared notes.
@@ -97,4 +106,3 @@ export const Landingpage = () => {
     </>
   )
 }
->>>>>>> 66ec013 (Initial commit)
