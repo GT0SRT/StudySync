@@ -10,6 +10,6 @@ createRoot(document.getElementById('root')).render(
   <Provider store={store}>
   <BrowserRouter basename="/StudySync">
     <App />
-  </BrowserRouter>,
+  </BrowserRouter>
   </Provider>
 )

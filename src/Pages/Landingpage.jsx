@@ -18,10 +18,10 @@ export const Landingpage = () => {
       <main className="text-center mt-12 relative">
         <section className="flex flex-col items-center justify-center">
           <div className='flex w-screen'>
-            <h1 className="text-5xl md:text-7xl font-bold italic mr-[400px] p-7 mt-12">Study, Grow & Collaborate</h1>
+            <h1 className="text-4xl md:text-7xl font-bold italic mr-[400px] p-5 mt-12">Study, Grow & Collaborate</h1>
             <div className="h-[50%] w-[50%] ml-[50%] md:ml-[60%] mt-7 md:h-[32%] md:w-[32%] rounded-[20px] absolute"><img src={mainimg} href='emd' alt='main' /></div>
           </div>
-          <div className='flex m-16 gap-7'>
+          <div className='flex m-16 gap-7 md:mt-32'>
             <Link to="/Calendar">
             <div className='text-cyan-300 hover:cursor-pointer hover:scale-105 flex flex-col gap-2 justify-center items-center'>
                 <FaCalendarAlt size={64}/>

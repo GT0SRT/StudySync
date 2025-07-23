@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
     <>
-      <footer className="bg-gradient-to-t from-[#06202c] to-black text-white font-mono border-t-[6px] border-pink-300 rounded-[20px] p-10">
+      <footer className="bg-gradient-to-t from-[#06202c] to-black text-white font-mono border-t-[6px] border-pink-300 rounded-[20px] rounded-b-none p-10">
         <div className="flex flex-col items-center text-center">
           <div className="text-[2.5rem] font-[cursive]">study-sync</div>
 
