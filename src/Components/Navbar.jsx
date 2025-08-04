@@ -1,38 +1,42 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaBell } from "react-icons/fa";
 import { IoMdExit } from 'react-icons/io';
 import { signOut } from "firebase/auth";
-import { auth, db } from "../Components/firebase";
+import { auth } from "./firebase";
 import { toast } from "react-toastify";
-import { doc, getDoc } from 'firebase/firestore';
+// import { doc, getDoc } from 'firebase/firestore';
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
-  const navigate = useNavigate();
-  const [userDetails, setUserDetails] = useState(null);
-    const fetchUserData = async () => {
-      auth.onAuthStateChanged(async (user) => {
-        console.log(user);
+  // const navigate = useNavigate();
+  const userDetails = useSelector((state) => state.userDetails.user);
+  // const [userDetails, setUserDetails] = useState(null);
+  //   const fetchUserData = async () => {
+  //     auth.onAuthStateChanged(async (user) => {
+  //       console.log(user);
   
-        const docRef = doc(db, "Users", user.uid);
-        const docSnap = await getDoc(docRef);
-        if (docSnap.exists()) {
-          setUserDetails(docSnap.data());
-          console.log(docSnap.data());
-        } else {
-          console.log("User is not logged in");
-        }
-      });
-    };
-    useEffect(() => {
-      fetchUserData();
-    }, []);
+  //       const docRef = doc(db, "Users", user.uid);
+  //       const docSnap = await getDoc(docRef);
+  //       if (docSnap.exists()) {
+  //         setUserDetails(docSnap.data());
+  //         console.log(docSnap.data());
+  //       } else {
+  //         console.log("User is not logged in");
+  //       }
+  //     });
+  //   };
+  //   useEffect(() => {
+  //     fetchUserData();
+  //   }, []);
 
   const handleLogout = async () => {
     try {
       await signOut(auth);
       toast.success("Logged out successfully!", { position: "top-center" });
-      navigate("/login");
+      setTimeout(() => {
+        window.location.href = '/StudySync/login';
+      }, 2000);
     } catch (error) {
       toast.error("Logout failed: " + error.message, { position: "bottom-center" });
     }
