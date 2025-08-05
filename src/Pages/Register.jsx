@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { auth, db } from "../Components/firebase";
 import { setDoc, doc } from "firebase/firestore";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
 import SignInwithGoogle from '../Components/signInwithGoogle';
 
 const Register = () => {
@@ -28,12 +28,12 @@ const Register = () => {
                 photo:""
                 });
             }
-            console.log("User Registered Successfully!!");
-            toast.success("User Registered Successfully!!", {
-                position: "top-center",
+            await sendEmailVerification(user);
+            console.log("Verification Email Sent Successfully!!");
+            toast.success("Verification Email Sent Successfully!! please verify Before login", {
                 autoClose: 3000,
             });
-            navigate('//');
+            navigate('/login');
         } catch (error) {
             console.log(error.message);
             toast.error(error.message, {

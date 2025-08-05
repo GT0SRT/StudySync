@@ -5,19 +5,20 @@ import { Landingpage } from './Pages/Landingpage';
 import { Routes, Route } from 'react-router-dom';
 // import Calendar from './Pages/Calendar';
 // import Collaborate from './Pages/Collaborate';
-// import Todo from './Pages/Todo';
+import Todo from './Pages/Todo2';
 import About from './Pages/About';
 // import Help from './Pages/Help';
 // import Pricing from './Pages/Pricing';
 // import Productivity from './Pages/Productivity';
 // import DisplayTodos from './Components/DisplayTodos';
+import Chatbot from './Pages/sample_bot';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
 import ForgotPassword from './Components/ForgotPassword';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-// import PrivateRoute from './Components/PrivateRoute';
-// import Profile from './Pages/Profile';
+import PrivateRoute from './Components/PrivateRoute';
+import Profile from './Pages/Profile';
 import { auth, db } from "./Components/firebase";
 import { onAuthStateChanged } from 'firebase/auth';
 import { doc, getDoc } from 'firebase/firestore';
@@ -56,8 +57,9 @@ function App() {
         {/* <Route path="/Pricing" element={<><Pricing /><Upcoming/></>} /> */}
         {/* <Route path="/Productivity" element={<PrivateRoute><Productivity /><Upcoming/></PrivateRoute>} /> */}
         {/* <Route path="/Help" element={<><Help /><Upcoming/></>} /> */}
-        {/* <Route path="/Todo" element={<PrivateRoute><Todo /></PrivateRoute>} /> */}
-        {/* <Route path="/profile" element={<PrivateRoute><Profile /></PrivateRoute>} /> */}
+        <Route path="/Todo" element={<PrivateRoute><Todo /></PrivateRoute>} />
+        <Route path="/chat" element={<PrivateRoute><Chatbot /></PrivateRoute>} />
+        <Route path="/profile" element={<PrivateRoute><Profile /></PrivateRoute>} />
         <Route path="/Login" element={<Login/>} />
         <Route path="/signup" element={<Register/>} />
         <Route path="/forgotpassword" element={<ForgotPassword/>} />

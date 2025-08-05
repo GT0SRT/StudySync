@@ -1,13 +1,12 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import {getAuth} from "firebase/auth";
-import {getFirestore} from "firebase/firestore";
+import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// Firebase AI imports
+import { getAI, getGenerativeModel, GoogleAIBackend } from "firebase/ai";
+
+// Firebase configuration (replace with environment variables for production use)
 const firebaseConfig = {
   apiKey: "AIzaSyBjKU03VhxfJj45E64fwIoDo1QLD78Umec",
   authDomain: "studysync-authentication.firebaseapp.com",
@@ -18,10 +17,19 @@ const firebaseConfig = {
   measurementId: "G-SFE1SX2FT5"
 };
 
-// Initialize Firebase
+// Initialize Firebase app
 const app = initializeApp(firebaseConfig);
+
+// Initialize Firebase services
+const auth = getAuth(app);
+const db = getFirestore(app);
 const analytics = getAnalytics(app);
 
-export const auth=getAuth();
-export const db=getFirestore(app);
-export default app;
+// Initialize Firebase AI
+const ai = getAI(app, { backend: new GoogleAIBackend() });
+
+// Create Generative Model instance
+const model = getGenerativeModel(ai, { model: "gemini-2.5-flash" });
+
+// Export services for use across the app
+export { app, auth, db, analytics, ai, model };

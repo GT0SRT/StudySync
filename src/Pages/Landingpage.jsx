@@ -28,7 +28,7 @@ export const Landingpage = () => {
                 <p className='font-semibold text-xl text-white'>calendar</p>
             </div>
             </Link>
-            <Link to="/Todo">
+            <Link to="/chat">
             <div className='text-cyan-300 hover:cursor-pointer hover:scale-105 flex flex-col gap-2 justify-center items-center'>              
                 <LuListTodo size={64}/>
                 <p className='font-semibold text-xl text-white'>To-do list</p>
@@ -43,16 +43,19 @@ export const Landingpage = () => {
           </div>
         </section>
 
-        <div className='mt-5 md:mt-12 p-7 flex flex-col md:flex-row mx-auto items-center justify-center'>
-        <img src={deep} alt="StudySync Logo" className="w-[20vh] h-[20vh] md:w-[30vh] md:h-[30vh] m-5 p-3 rounded-full mb-2" />
-        <section className="bg-[#222] cursor-pointer p-8 w-[80%] md:w-[40%] rounded-[20px] text-left">
-          <h2 className="font-mono text-xl mb-2">Build, Code using AI</h2>
-          <p className="text-sm text-gray-300">
-            Collaborate on tasks, sync deadlines, and join AI-matched study groups. Get personalized productivity insights and shared notes.
-            Perfect for students who want organized, efficient learning. Join now!
-          </p>
-        </section>
-        </div>
+        <Link to={'/chat'}>
+          <div className='mt-5 md:mt-12 p-7 flex flex-col md:flex-row mx-auto items-center justify-center'>
+          <img src={deep} alt="StudySync Logo" className="w-[20vh] h-[20vh] md:w-[30vh] md:h-[30vh] m-5 p-3 rounded-full mb-2" />
+          <section className="bg-[#222] cursor-pointer p-8 w-[80%] md:w-[40%] rounded-[20px] text-left">
+            <h2 className="font-mono text-xl mb-2">Build, Code using AI</h2>
+            <p className="text-sm text-gray-300">
+              Collaborate on tasks, sync deadlines, and join AI-matched study groups. Get personalized productivity insights and shared notes.
+              Perfect for students who want organized, efficient learning. Join now!
+            </p>
+          </section>
+          </div>
+        </Link>
+
       </main>
 
       <section className="bg-black text-white font-mono mt-[100px] px-5">

@@ -15,6 +15,17 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
+            const userCredential = await signInWithEmailAndPassword(auth, email, password);
+
+            if (!userCredential.user.emailVerified) {
+                toast.error("Please verify your email before logging in.",{
+                position: "top-center",
+                autoClose: 2000,
+            });
+                await auth.signOut();
+                return;
+            }
+
             await signInWithEmailAndPassword(auth, email, password);
             console.log("User logged in Successfully");
             navigate('//');

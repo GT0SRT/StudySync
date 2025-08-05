@@ -20,7 +20,7 @@ const signInwithGoogle = () => {
         toast.success("User logged in Successfully", {
           position: "top-center",
         });
-        window.location.href = "/profile";
+        window.location.href = "/";
       }
     });
   }
