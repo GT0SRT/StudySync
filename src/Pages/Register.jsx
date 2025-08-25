@@ -77,7 +77,7 @@ const Register = () => {
                 text-white hover:text-[#061F2B] bg-[#061F2B] hover:bg-transparent">signup</button>
             </form>
             {
-                window.innerWidth <= 450 ? (<></>):
+                window.innerWidth <= 1000 ? (<></>):
                 (<><p>or</p><SignInwithGoogle/></>)
             }
             <div className='flex pt-3 pb-2'>
