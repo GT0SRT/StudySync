@@ -76,8 +76,10 @@ const Register = () => {
                 <button className="border-2 text-md mt-1 pl-5 pr-5 pt-1 pb-1 border-[#061F2B] rounded-xl
                 text-white hover:text-[#061F2B] bg-[#061F2B] hover:bg-transparent">signup</button>
             </form>
-            <p>or</p>
-            <SignInwithGoogle/>
+            {
+                window.innerWidth <= 450 ? (<></>):
+                (<><p>or</p><SignInwithGoogle/></>)
+            }
             <div className='flex pt-3 pb-2'>
                 <p>Already have an account ?</p>
                 <Link to='/Login' className='pl-1 text-[#3131e7] hover:underline'> Login</Link>
